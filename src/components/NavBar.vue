@@ -67,7 +67,10 @@
                   class="dropdown-item"
                   @click.prevent="logout"
                 >
-                  <font-awesome-icon class="mr-3" icon="power-off" />Log out
+                  <font-awesome-icon class="mr-3" icon="power-off" />Log out</a>
+                <a class="dropdown-item" @click.prevent="deleteAccount(accountId)">
+                  <font-awesome-icon class="mr-3" icon="power-off" />
+                  DELETE ACCOUNT
                 </a>
               </div>
             </li>
@@ -110,8 +113,7 @@
             <li>
               <font-awesome-icon icon="power-off" class="mr-3" />
               <a id="qsLogoutBtn" href="#" class @click.prevent="logout"
-                >Log out</a
-              >
+                >Log out</a>
             </li>
           </ul>
         </div>
@@ -122,6 +124,7 @@
 
 <script>
 import { useAuth0 } from "@auth0/auth0-vue";
+import axios from "axios";
 
 export default {
   name: "NavBar",
@@ -132,6 +135,7 @@ export default {
       isAuthenticated: auth0.isAuthenticated,
       isLoading: auth0.isLoading,
       user: auth0.user,
+      accountId: auth0.user.value.sub,
       login() {
         auth0.loginWithRedirect();
       },
@@ -140,6 +144,9 @@ export default {
           returnTo: window.location.origin,
         });
       },
+      deleteProfile(accountId) {
+      axios.delete(`http://localhost:8080/api/profiles/delete/${accountId}`)
+    },
     };
   },
 };

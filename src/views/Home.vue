@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import HomeView from "../components/HomeView";
+import HomeView from "../views/HomeView";
 
 export default {
   name: "home",

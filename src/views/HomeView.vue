@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import SellerItem from "./SellerItem.vue";
+import SellerItem from "../components/SellerItem.vue";
 
 export default {
   name: "HomeView",
