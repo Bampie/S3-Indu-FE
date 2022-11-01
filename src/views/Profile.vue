@@ -19,12 +19,14 @@
         v-bind:profile="profile"
       />
     </div>
-    <hr />
+    
     <div class="editProfileForm" v-if="profile.sellerProfile == true">
+      <h4 class="semi-header">View profile Detials &/or edit</h4>
+      <hr />
       <EditProfile :profile="profile" />
     </div>
-    <div>
-      {{ profile }}<br />
+    <div v-if="profile.sellerProfile != true">
+      <h3>you haven't created a profile here yet!</h3>
     </div>
   </div>
 </template>
@@ -76,3 +78,14 @@ export default {
   components: { ProfileBtn, EditProfile },
 };
 </script>
+
+<style>
+.semi-header{
+  text-align: center;
+}
+h3{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 200px;
+}
+</style>

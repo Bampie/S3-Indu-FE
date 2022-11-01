@@ -43,9 +43,8 @@ export default {
             price: 0,
             delivery_Time: 0,
           })
-          .then()
           .finally(() => {
-            this.$router.push({ name: "profile" });
+            window.location.reload();
           });
       }
     },
@@ -58,9 +57,8 @@ export default {
           price: 0,
           delivery_Time: 0,
         })
-        .then()
         .finally(() => {
-          this.$router.push({ name: "profile" });
+          window.location.reload();
         });
     },
     //change profile to buyer profile
@@ -72,9 +70,8 @@ export default {
           price: 0,
           delivery_Time: 0,
         })
-        .then()
         .finally(() => {
-          this.$index.push({ name: "profile" });
+          window.location.reload();
         });
     },
   },
