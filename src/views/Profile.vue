@@ -21,7 +21,7 @@
     </div>
     <hr />
     <div class="editProfileForm" v-if="profile.sellerProfile == true">
-      <EditProfile v-bind:profile="profile" />
+      <EditProfile :profile="profile" />
     </div>
     <div>
       {{ profile }}<br />
