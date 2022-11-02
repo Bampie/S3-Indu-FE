@@ -26,7 +26,7 @@
       <EditProfile :profile="profile" />
     </div>
     <div v-if="profile.sellerProfile != true">
-      <h3>you haven't created a profile here yet!</h3>
+      <h3 class="noProfilePage">you haven't created a profile here yet!</h3>
     </div>
   </div>
 </template>
@@ -53,12 +53,12 @@ export default {
     // initialiseren of the page, see if there's a profile or get profile.
     AccountPaginaStartUp(accountId) {
       axios
-        .get(`http://localhost:8080/api/profiles/check/${accountId}`)
+        .get(`http://localhost:8081/api/profiles/check/${accountId}`)
         .then((response) => {
           this.isAccountKnownByDatabase = response.data.isIdFound;
           if (this.isAccountKnownByDatabase == true) {
             axios
-              .get(`http://localhost:8080/api/profiles/${accountId}`)
+              .get(`http://localhost:8081/api/profiles/${accountId}`)
               .then((response) => {
                 this.profile = response.data;
               });
@@ -83,7 +83,7 @@ export default {
 .semi-header{
   text-align: center;
 }
-h3{
+.noProfilePage {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 200px;

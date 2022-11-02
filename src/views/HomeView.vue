@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     getProfiles() {
-      fetch("http://localhost:8080/api/profiles")
+      fetch("http://localhost:8081/api/profiles")
         .then((response) => {
           if (response.ok) {
             this.profiles = response;

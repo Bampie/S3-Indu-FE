@@ -32,7 +32,7 @@
 </template>
 
 <script>
-const baseUrl = "http://localhost:8080/api/profiles";
+const baseUrl = "http://localhost:8081/api/profiles";
 
 export default {
   name: "SellersPage",

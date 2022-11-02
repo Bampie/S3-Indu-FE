@@ -93,7 +93,7 @@ export default {
   },
   methods: {
     createSellerProfile() {
-      axios.put("http://localhost:8080/api/profiles/edit", {
+      axios.put("http://localhost:8081/api/profiles/edit", {
         auth0Id: this.profile.auth0Id,
         name: this.newProfile.name,
         description: this.newProfile.description,

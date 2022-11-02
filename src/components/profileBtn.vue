@@ -37,7 +37,7 @@ export default {
     createGeneralProfile(userId, isAccountKnown) {
       if (isAccountKnown == false) {
         axios
-          .post("http://localhost:8080/api/profiles", {
+          .post("http://localhost:8081/api/profiles", {
             auth0Id: userId,
             sellerProfile: false,
             price: 0,
@@ -51,7 +51,7 @@ export default {
     // change profile to seller
     createSellerProfile(userId) {
       axios
-        .put("http://localhost:8080/api/profiles/edit", {
+        .put("http://localhost:8081/api/profiles/edit", {
           auth0Id: userId,
           sellerProfile: true,
           price: 0,
@@ -64,7 +64,7 @@ export default {
     //change profile to buyer profile
     toBuyerProfile(userId) {
       axios
-        .put("http://localhost:8080/api/profiles/edit", {
+        .put("http://localhost:8081/api/profiles/edit", {
           auth0Id: userId,
           sellerProfile: false,
           price: 0,
