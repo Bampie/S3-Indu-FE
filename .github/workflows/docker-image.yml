@@ -8,7 +8,6 @@ on:
 
 jobs:
 
-steps:
   build:
 
     runs-on: ubuntu-latest
@@ -16,8 +15,6 @@ steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build -t vuejs-s3-fe/dockerize-vuejs-app .
-
-  publish:
-    needs: build
+      
     - name: run docker
         run: docker run -it -p 6001:6000 --rm --name dockerize-vuejs-app-1 vuejs-s3-fe/dockerize-vuejs-app
