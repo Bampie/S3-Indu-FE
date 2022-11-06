@@ -17,6 +17,6 @@ jobs:
       run: docker build -t vuejs-s3-fe/dockerize-vuejs-app .
 
   publish:
-
     needs: build
-    run: docker run -it -p 6001:6000 --rm --name dockerize-vuejs-app-1 vuejs-s3-fe/dockerize-vuejs-app
+    - name: run docker
+        run: docker run -it -p 6001:6000 --rm --name dockerize-vuejs-app-1 vuejs-s3-fe/dockerize-vuejs-app
