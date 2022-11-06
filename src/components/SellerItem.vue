@@ -23,11 +23,12 @@
             Delivery: Number,
             Equipment: String,
             Experience: String,
-            Id: String
+            Id: String,
+            Auth0: String
         },
         data() {
             return {
-                SellerId: this.Id
+                SellerId: this.Auth0
             }
         }
     };

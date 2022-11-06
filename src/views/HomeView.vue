@@ -7,6 +7,7 @@
       :Equipment="profile.equipment"
       :Experience="profile.experience"
       :Id="profile.id"
+      :Auth0="profile.auth0Id"
     />
   </div>
 </template>
