@@ -1,6 +1,6 @@
 {
-  "name": "01-login",
-  "version": "0.1.0",
+  "name": "stringer",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
