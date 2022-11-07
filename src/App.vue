@@ -1,7 +1,4 @@
 <template>
-  <head>
-    <title>Stringer</title>
-  </head>
   <div id="app" class="d-flex flex-column h-100">
     <nav-bar />
     <div class="container flex-grow-1">
