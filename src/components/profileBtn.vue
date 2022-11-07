@@ -71,13 +71,9 @@ export default {
       axios
         .put("http://localhost:8081/api/profiles/edit", {
           auth0Id: userId,
-          name: this.newProfile.name,
-          description: this.newProfile.description,
-          delivery_Time: this.newProfile.delivery_Time,
-          equipment: this.newProfile.equipment,
-          experience: this.newProfile.experience,
-          price: this.newProfile.price,
           sellerProfile: false,
+          price: 0,
+          delivery_Time: 0,
         })
         .finally(() => {
           window.location.reload();
