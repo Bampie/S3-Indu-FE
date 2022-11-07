@@ -1,4 +1,7 @@
 <template>
+  <head>
+    <title>Stringer</title>
+  </head>
   <div id="app" class="d-flex flex-column h-100">
     <nav-bar />
     <div class="container flex-grow-1">
@@ -11,7 +14,6 @@
       <div class="logo"></div>
       <p>
         TheStringers
-        <a href="https://auth0.com">About The Stringer</a>
       </p>
     </footer>
   </div>
