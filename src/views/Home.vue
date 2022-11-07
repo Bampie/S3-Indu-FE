@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Welkom op de hoofdpagina! lol</h3>
+    <h3>Welkom op de hoofdpagina!</h3>
     <hr />
     <home-view />
   </div>
