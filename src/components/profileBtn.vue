@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     createGeneralProfile(userId, isAccountKnown) {
-      if (isAccountKnown == false) {
+      if (!isAccountKnown) {
         axios
           .post("http://localhost:8081/api/profiles", {
             auth0Id: userId,
@@ -65,9 +65,6 @@ export default {
         })
         .then(() => {
           delay(20000000)
-        })
-        .finally(() => {
-          // window.location.reload();
         });
     },
     //change profile to buyer profile

@@ -56,7 +56,7 @@ export default {
         .get(`http://localhost:8081/api/profiles/check/${accountId}`)
         .then((response) => {
           this.isAccountKnownByDatabase = response.data.isIdFound;
-          if (this.isAccountKnownByDatabase == true) {
+          if (this.isAccountKnownByDatabase) {
             axios
               .get(`http://localhost:8081/api/profiles/${accountId}`)
               .then((response) => {
