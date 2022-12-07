@@ -1,5 +1,5 @@
 <template>
-  <div class="seller" v-for="profile in profiles" v-bind:key="profile.id">
+  <div class="seller" id="sellerOverview" v-for="profile in profiles" v-bind:key="profile.id">
     <SellerItem
       :Name="profile.name"
       :Description="profile.description"

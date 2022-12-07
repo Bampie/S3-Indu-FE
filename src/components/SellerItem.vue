@@ -10,7 +10,7 @@
         <p class="Delivery">Delivery takes: {{ Delivery }} days.</p>
         <p class="Equipment">Equipment: {{ Equipment }}</p>
         <p class="Experience">My Experience: {{ Experience }}</p>
-        <router-link :to="{ name:'sellerPage', params: {SId: SellerId}}">More Info</router-link>
+        <router-link id="btn-sellerInfo" :to="{ name:'sellerPage', params: {SId: SellerId}}">More Info</router-link>
     </div>
 </template>
 
