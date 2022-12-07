@@ -13,7 +13,11 @@
 </template>
 
 <script>
-import SellerItem from "../components/SellerItem.vue";
+import { defineAsyncComponent } from 'vue'
+
+const SellerItem = defineAsyncComponent(() =>
+  import("../components/SellerItem.vue")
+)
 
 export default {
   name: "HomeView",
@@ -27,7 +31,7 @@ export default {
   },
   methods: {
     getProfiles() {
-      fetch("http://localhost:8081/api/profiles")
+      fetch("http://localhost:8082/api/profiles")
         .then((response) => {
           if (response.ok) {
             this.profiles = response;

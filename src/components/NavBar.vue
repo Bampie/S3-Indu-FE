@@ -145,7 +145,7 @@ export default {
         });
       },
       deleteProfile(accountId) {
-      axios.delete(`http://localhost:8081/api/profiles/delete/${accountId}`)
+      axios.delete(`http://localhost:8082/api/profiles/delete/${accountId}`)
     },
     };
   },
