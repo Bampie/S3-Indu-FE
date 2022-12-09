@@ -68,7 +68,7 @@
                   @click.prevent="logout"
                 >
                   <font-awesome-icon class="mr-3" icon="power-off" />Log out</a>
-                <a class="dropdown-item" @click.prevent="deleteAccount(accountId)">
+                <a class="dropdown-item" @click.prevent="deleteProfile(accountId)">
                   <font-awesome-icon class="mr-3" icon="power-off" />
                   DELETE ACCOUNT
                 </a>
@@ -144,12 +144,13 @@ export default {
           returnTo: window.location.origin,
         });
       },
-      deleteProfile(accountId) {
-      axios.delete(`http://localhost:8082/api/profiles/delete/${accountId}`)
-    },
+      deleteProfile() {
+        axios.delete(`http://localhost:8082/api/profiles/delete/${auth0.user.value.sub}`)
+      }
     };
   },
 };
+
 </script>
 
 <style scoped>

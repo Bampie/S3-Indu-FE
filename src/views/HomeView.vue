@@ -1,32 +1,35 @@
 <template>
-  <div class="seller" id="sellerOverview" v-for="profile in profiles" v-bind:key="profile.id">
-    <SellerItem
-      :Name="profile.name"
-      :Description="profile.description"
-      :Delivery="profile.delivery_Time"
-      :Equipment="profile.equipment"
-      :Experience="profile.experience"
-      :Id="profile.id"
-      :Auth0="profile.auth0Id"
-    />
+  <div >
+    <div class="seller" v-for="profile in profiles" v-bind:key="profile.id">
+      <SellerItem
+        :Name="profile.name"
+        :Description="profile.description"
+        :Delivery="profile.delivery_Time"
+        :Equipment="profile.equipment"
+        :Experience="profile.experience"
+        :Id="profile.id"
+        :Auth0="profile.auth0Id"
+        id="sellerOverview"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent } from "vue";
 
 const SellerItem = defineAsyncComponent(() =>
   import("../components/SellerItem.vue")
-)
+);
 
 export default {
   name: "HomeView",
   components: {
-    SellerItem
-},
+    SellerItem,
+  },
   data() {
     return {
-      profiles: []
+      profiles: [],
     };
   },
   methods: {
