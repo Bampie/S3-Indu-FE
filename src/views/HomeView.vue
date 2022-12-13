@@ -1,6 +1,6 @@
 <template>
   <div >
-    <div class="seller" v-for="profile in profiles" v-bind:key="profile.id">
+    <div class="seller" v-for="profile in profiles" v-bind:key="profile">
       <SellerItem
         :Name="profile.name"
         :Description="profile.description"
@@ -9,7 +9,7 @@
         :Experience="profile.experience"
         :Id="profile.id"
         :Auth0="profile.auth0Id"
-        id="sellerOverview"
+        class="sellerOverview"
       />
     </div>
   </div>
