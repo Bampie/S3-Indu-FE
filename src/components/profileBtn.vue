@@ -25,7 +25,6 @@
 
 <script>
 import axios from "axios";
-import { delay } from "q";
 
 export default {
   name: "profileBtn",
@@ -62,6 +61,9 @@ export default {
           sellerProfile: true,
           price: 0,
           delivery_Time: 0,
+        })
+        .finally(() => {
+          window.location.reload();
         })
     },
     //change profile to buyer profile

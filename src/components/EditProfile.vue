@@ -56,7 +56,7 @@
       <label class="label">Delivery time: </label>
       <input
         type="number"
-        v-model="newProfile.delivery_Time"
+        v-model="newProfile.deliveryTime"
         name="delivery_Time"
         class="delivery-time input-form"
         />
@@ -97,7 +97,7 @@ export default {
         auth0Id: this.profile.auth0Id,
         name: this.newProfile.name,
         description: this.newProfile.description,
-        delivery_Time: this.newProfile.delivery_Time,
+        deliveryTime: this.newProfile.deliveryTime,
         equipment: this.newProfile.equipment,
         experience: this.newProfile.experience,
         price: this.newProfile.price,
@@ -122,22 +122,22 @@ template {
 /* .add-form {
   display: inline-block;
 } */
-.form-control {
-  width:80%;
-  display:inline-block;
-  height: fit-content;
-  margin-left: 10%;
-}
-.input-form {
-  width:60%;
-  float:right;
-}
-.row{
-  width:100%;
-  display:block;
-}
-.label{
-  width:30%;
-  float:left;
-}
+  .form-control {
+    width:80%;
+    display:inline-block;
+    height: fit-content;
+    margin-left: 10%;
+  }
+  .input-form {
+    width:60%;
+    float:right;
+  }
+  .row{
+    width:100%;
+    display:block;
+  }
+  .label{
+    width:30%;
+    float:left;
+  }
 </style>

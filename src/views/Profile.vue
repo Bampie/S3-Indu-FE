@@ -20,13 +20,21 @@
       />
     </div>
     
-    <div class="editProfileForm" v-if="profile.sellerProfile == true">
+    <div class="editProfileForm" v-if="profile.sellerProfile">
       <h4 class="semi-header">View profile Detials &/or edit</h4>
       <hr />
       <EditProfile :profile="profile" />
+      <createReciept :profile="profile" />
+
     </div>
     <div v-if="profile.sellerProfile != true">
       <h3 class="noProfilePage">you haven't created a profile here yet!</h3>
+    </div>
+
+    <div v-if="accountId != null" class="sales">
+      <h2> Sales</h2>
+
+      <SaleOverview :profile="profile" />
     </div>
   </div>
 </template>
@@ -36,6 +44,8 @@ import EditProfile from "@/components/EditProfile.vue";
 import { useAuth0 } from "@auth0/auth0-vue";
 import axios from "axios";
 import ProfileBtn from "../components/profileBtn.vue";
+import SaleOverview from "@/components/SaleOverview.vue";
+import createReciept from "@/components/createReciept.vue";
 
 export default {
   name: "profile",
@@ -47,6 +57,7 @@ export default {
       err: null,
       isAccountKnownByDatabase: null,
       profile: [],
+      createReciept: false,
     };
   },
   methods: {
@@ -75,11 +86,18 @@ export default {
       this.isAccountKnownByDatabase = true;
     }
   },
-  components: { ProfileBtn, EditProfile },
+  components: { ProfileBtn, EditProfile, SaleOverview, createReciept },
 };
 </script>
 
 <style>
+.sales {
+  align-content: center;
+  width: 80%;
+}
+.sale-btn {
+  margin-left: 15px;
+}
 .semi-header{
   text-align: center;
 }
