@@ -50,7 +50,7 @@
         />
       </div>
       <br />
-      <button @click.prevent="createSale()" class="add-sale-btn">create</button>
+      <button @click="createSale()" class="add-sale-btn">create</button>
     </form>
   </div>
 </template>
