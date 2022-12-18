@@ -24,7 +24,7 @@
       
       <div class="grid-item5 item">
         <h5 class="SellerDeleveryTitle text">Delevery Time:</h5>
-        <p class="SellerDelivery text">{{ profile.delivery_Time }} Days</p>
+        <p class="SellerDelivery text">{{ profile.deliveryTime }} Days</p>
       </div>
     </div>
   </div>

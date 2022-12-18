@@ -19,22 +19,16 @@
         v-bind:profile="profile"
       />
     </div>
-    
-    <div class="editProfileForm" v-if="profile.sellerProfile">
-      <h4 class="semi-header">View profile Detials &/or edit</h4>
-      <hr />
-      <EditProfile :profile="profile" />
-      <createReciept :profile="profile" />
 
+    <div class="editProfileForm" v-if="profile.sellerProfile">
+      <EditProfile :profile="profile" />
+      <div v-if="profile.sellerProfile" class="sales">
+        <SaleOverview :profile="profile" />
+      </div>
+      <createReciept :profile="profile" />
     </div>
     <div v-if="profile.sellerProfile != true">
-      <h3 class="noProfilePage">you haven't created a profile here yet!</h3>
-    </div>
-
-    <div v-if="accountId != null" class="sales">
-      <h2> Sales</h2>
-
-      <SaleOverview :profile="profile" />
+      <h3 class="noProfilePage">you haven't created a Seller profile here yet!</h3>
     </div>
   </div>
 </template>
@@ -76,7 +70,7 @@ export default {
           }
         });
     },
-    watch(accountId){
+    watch(accountId) {
       this.AccountPaginaStartUp(accountId);
     },
   },
@@ -98,7 +92,7 @@ export default {
 .sale-btn {
   margin-left: 15px;
 }
-.semi-header{
+.semi-header {
   text-align: center;
 }
 .noProfilePage {

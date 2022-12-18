@@ -1,10 +1,10 @@
 <template>
-  <div >
+  <div style="margin-bottom: 160px;">
     <div class="seller" v-for="profile in profiles" v-bind:key="profile">
       <SellerItem
         :Name="profile.name"
         :Description="profile.description"
-        :Delivery="profile.delivery_Time"
+        :Delivery="profile.deliveryTime"
         :Equipment="profile.equipment"
         :Experience="profile.experience"
         :Id="profile.id"

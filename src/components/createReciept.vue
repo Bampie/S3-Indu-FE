@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h5 class="title">create sale</h5>
+    <h2 class="title" style="margin-top: 60px;">create sale</h2>
     <form>
       <div class="form-control">
         <label class="label">Title: </label>
@@ -50,7 +50,7 @@
         />
       </div>
       <br />
-      <button @click="createSale()" class="add-sale-btn">create</button>
+      <button @click="createSale()" class="add-sale-btn">Create</button>
     </form>
   </div>
 </template>
@@ -79,9 +79,6 @@ export default {
           aankoopDatum: this.sale.date,
           profile: this.profile,
         })
-        .finally(() => {
-          // window.location.reload();
-        });
     },
   },
 };
@@ -90,6 +87,10 @@ export default {
 <style scoped>
 .add-sale-btn {
   align-content: center;
+  width: 100%;
+  display: block;
+  background-color: white;
+  border: white;
 }
 .title {
   text-align: center;
