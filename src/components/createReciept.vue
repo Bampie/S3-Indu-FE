@@ -39,7 +39,7 @@
           class="delivery-time input-form"
         />
       </div>
-      
+
       <div class="form-control">
         <label class="label">Costumer note: </label>
         <input
@@ -50,20 +50,18 @@
         />
       </div>
       <br />
-      <button @click="createSale()" class="add-sale-btn">
-        create
-      </button>
+      <button @click.prevent="createSale()" class="add-sale-btn">create</button>
     </form>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   name: "createReciept",
   props: {
-    profile: Object
+    profile: Object,
   },
   data() {
     return {
@@ -72,46 +70,47 @@ export default {
   },
   methods: {
     createSale() {
-        axios.post("http://localhost:8082/api/sale", {
-            title: this.sale.title,
-            description: this.sale.description,
-            price: this.sale.price,
-            costumerNote: this.sale.costumerNote,
-            aankoopDatum: this.sale.date,
-            profile_profileId: this.profile
+      axios
+        .post("http://localhost:8080/api/sale", {
+          title: this.sale.title,
+          description: this.sale.description,
+          price: this.sale.price,
+          costumerNote: this.sale.costumerNote,
+          aankoopDatum: this.sale.date,
+          profile: this.profile,
         })
         .finally(() => {
-            // window.location.reload();
-        })
-    }
-  }
+          // window.location.reload();
+        });
+    },
+  },
 };
 </script>
 
 <style scoped>
 .add-sale-btn {
-    align-content: center;
+  align-content: center;
 }
 .title {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 .form-control {
   /* width:80%; */
-  display:inline-block;
+  display: inline-block;
   height: fit-content;
   /* margin-left: 10%; */
 }
 .input-form {
   /* width:60%; */
-  float:right;
+  float: right;
 }
-.row{
-  width:100%;
-  display:block;
+.row {
+  width: 100%;
+  display: block;
 }
-.label{
+.label {
   /* width:30%; */
-  float:left;
+  float: left;
 }
 </style>

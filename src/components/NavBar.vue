@@ -145,7 +145,7 @@ export default {
         });
       },
       deleteProfile() {
-        axios.delete(`http://localhost:8082/api/profiles/delete/${auth0.user.value.sub}`)
+        axios.delete(`http://localhost:8080/api/profiles/delete/${auth0.user.value.sub}`)
       }
     };
   },

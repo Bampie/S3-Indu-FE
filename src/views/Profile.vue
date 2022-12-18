@@ -64,12 +64,12 @@ export default {
     // initialiseren of the page, see if there's a profile or get profile.
     AccountPaginaStartUp(accountId) {
       axios
-        .get(`http://localhost:8082/api/profiles/check/${accountId}`)
+        .get(`http://localhost:8080/api/profiles/check/${accountId}`)
         .then((response) => {
           this.isAccountKnownByDatabase = response.data.isIdFound;
           if (this.isAccountKnownByDatabase) {
             axios
-              .get(`http://localhost:8082/api/profiles/${accountId}`)
+              .get(`http://localhost:8080/api/profiles/${accountId}`)
               .then((response) => {
                 this.profile = response.data;
               });

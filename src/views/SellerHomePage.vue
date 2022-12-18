@@ -26,13 +26,12 @@
         <h5 class="SellerDeleveryTitle text">Delevery Time:</h5>
         <p class="SellerDelivery text">{{ profile.delivery_Time }} Days</p>
       </div>
-
     </div>
   </div>
 </template>
 
 <script>
-const baseUrl = "http://localhost:8082/api/profiles";
+const baseUrl = "http://localhost:8080/api/profiles";
 
 export default {
   name: "SellersPage",
